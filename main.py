@@ -1,23 +1,21 @@
-import settings, data, utils, core, usermenu
+import data, utils, usermenu
 from colorama import init, Fore, Style
 
 init(autoreset = True)
 
 def main_menu():
-    utils.clear()
     global data
     app_data = data.load_data()
 
+    utils.update_status()
+
     while True:
-        print(f"\n{Fore.YELLOW}{Style.BRIGHT}--- School Bag Management ---{Style.RESET_ALL}")
+        utils.clear()
+
+        print(f"\n{utils.AMBER}--- School Bag Management ---{Style.RESET_ALL}")
         print("[1] Select user")
         print("[2] Settings")
         print("[0] Exit")
-
-        update_version = utils.check_for_update()
-
-        if update_version:
-            print(f"{Fore.YELLOW}Update available!: {update_version}{Style.RESET_ALL}")
 
         try:
             choice = int(input(f"{Fore.CYAN}> {Style.RESET_ALL}"))
@@ -31,7 +29,7 @@ def main_menu():
                 break
 
         elif choice == 2:
-            settings.settings(app_data)
+            usermenu.settings(app_data)
 
         elif choice == 1:
             if not app_data["users"]:

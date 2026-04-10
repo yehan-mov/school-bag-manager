@@ -68,7 +68,7 @@ def add_user(data):
             continue
         
         if not (3 <= len(username) <= 15):
-            print(f"{Fore.RED}ERR: Username must be between 3 and 15 characthers.{Style.RESET_ALL}")
+            print(f"{Fore.RED}ERR: Username must be between 3 and 15 characters.{Style.RESET_ALL}")
             continue
         
         if not username.isalnum():
@@ -188,7 +188,7 @@ def remove_subject(data, user_data):
 def add_to_timetable(data, user_data):
     while True:
         print("Enter day (Monday - Friday) or type 0 to cancel")
-        raw_day = input(f"{Fore.CYAN} > {Style.RESET_ALL}").strip()
+        raw_day = input(f"{Fore.CYAN} > {Style.RESET_ALL}").strip().lower()
 
         if raw_day == "0":
             return
@@ -205,7 +205,7 @@ def add_to_timetable(data, user_data):
 
         day_data = user_data["timetable"][day]
 
-        if len(day_data) >= MAX_PERIODS:
+        if len(day_data) > MAX_PERIODS:
             print(f"{Fore.RED}ERR: Maximum {MAX_PERIODS} periods reached for {day}{Style.RESET_ALL}")
             continue
 
@@ -232,7 +232,7 @@ def add_to_timetable(data, user_data):
 
             if matches:
                 suggestion = matches[0]
-                print(f"{Fore.YELLOW}Did you meann '{suggestion}'? (Y/N){Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}Did you mean '{suggestion}'? (Y/N){Style.RESET_ALL}")
                 choice = input(f"{Fore.CYAN}> {Style.RESET_ALL}").strip().upper()
 
                 if choice == "Y":
@@ -262,7 +262,7 @@ def add_to_timetable(data, user_data):
         if more != "Y":
             break
 
-def veiw_timetable(user_data):
+def view_timetable(user_data):
     print("\n" + "=" * 50)
     print("        Weekly Timetable")
     print("=" * 50)
@@ -286,7 +286,7 @@ def veiw_timetable(user_data):
 def remove_from_timetable(data, user_data):
     while True:
         print("Enter day (Monday - Friday) or type 0 to cancel")
-        raw_day = input(f"{Fore.CYAN} > {Style.RESET_ALL}").strip()
+        raw_day = input(f"{Fore.CYAN} > {Style.RESET_ALL}").strip().lower()
 
         if raw_day == "0":
             return
@@ -329,7 +329,6 @@ def remove_from_timetable(data, user_data):
 
         print(f"{Fore.GREEN}Removed {removed_subject} from {day}, Period {period}!{Style.RESET_ALL}")
 
-        print(f"{Fore.GREEN}Added {subject} to {day}, Period {period}!{Style.RESET_ALL}")
         more = input(f"Would you like to add more? (Y/N){Fore.CYAN} > {Style.RESET_ALL}").upper().strip()
         
         if more != "Y":
