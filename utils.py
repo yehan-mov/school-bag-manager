@@ -4,7 +4,7 @@ from colorama import Fore, Style, init
 init(autoreset = True)
 
 GITHUB_API = "https://api.github.com/repos/yehan-mov/school-bag-manager/releases/latest"
-CURRENT_VERSION = "1.2.0"
+CURRENT_VERSION = "1.2.1"
 
 AMBER = Fore.YELLOW + Style.BRIGHT
 

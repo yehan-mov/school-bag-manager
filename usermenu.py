@@ -4,9 +4,9 @@ import utils, core, data
 init(autoreset=True)
 
 def settings(app_data):
-    while True:
-        utils.clear()
+    utils.clear()
 
+    while True:
         print(f"{utils.AMBER}--- Settings ---{Style.RESET_ALL}")
         print("[0] Return...")
 
@@ -54,9 +54,9 @@ def settings(app_data):
             continue
 
 def subject_menu(app_data, user_data):
-    while True:
-        utils.clear()
+    utils.clear()
 
+    while True:
         print(f"\n{utils.AMBER}--- Subject Menu ---{Style.RESET_ALL}")
         print("[0] Back...")
 
@@ -87,9 +87,9 @@ def subject_menu(app_data, user_data):
             print(f"{Fore.RED}ERR: Invalid option{Style.RESET_ALL}")
 
 def timetable_menu(app_data, user_data):
-    while True:
-        utils.clear()
+    utils.clear()
 
+    while True:
         print(f"\n{utils.AMBER}--- Timetable Menu ---{Style.RESET_ALL}")
         print("[0] Back...")
 
@@ -120,9 +120,9 @@ def timetable_menu(app_data, user_data):
             print(f"{Fore.RED}ERR: Invalid option{Style.RESET_ALL}")
 
 def user_menu(username, app_data, user_data):
-    while True:
-        utils.clear()
+    utils.clear()
 
+    while True:
         print(f"\n{utils.AMBER}--- Hello {username}! ---{Style.RESET_ALL}")
         print("--- Menu ---")
         print("[0] Return")

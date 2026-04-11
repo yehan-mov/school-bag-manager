@@ -8,10 +8,9 @@ def main_menu():
     app_data = data.load_data()
 
     utils.update_status()
+    utils.clear()
 
     while True:
-        utils.clear()
-
         print(f"\n{utils.AMBER}--- School Bag Management ---{Style.RESET_ALL}")
         print("[1] Select user")
         print("[2] Settings")
